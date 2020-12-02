@@ -1,4 +1,4 @@
-package main
+package foo
 
 import (
 	"bufio"
@@ -28,7 +28,7 @@ func main() {
 
 func readExpenses() (Expenses, error) {
 	expenses := make(Expenses)
-	file, err := os.Open("./inputs/day01.txt")
+	file, err := os.Open("./day01.txt")
 	if err != nil {
 		return expenses, err
 	}

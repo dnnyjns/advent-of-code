@@ -5,9 +5,8 @@ class PasswordPolicy
               :password
 
   def initialize(data)
-    # 10-19 v: vvvvvvvvnvvvvvvvvvg
     unless /(?<limit>\d+-\d+)\s(?<character>[A-Za-z]):\s(?<password>.+)/ =~ data
-      raise ArgumentError, "Data formatting incorrectly"
+      raise ArgumentError, "Regex failed. Expected format '10-19 v: vvvvvvvvnvvvvvvvvvg': #{data}"
     end
 
     @rule1, @rule2 = limit.split("-").map(&:to_i)
@@ -25,7 +24,7 @@ class PasswordPolicy
   end
 end
 
-policies = File.open("./inputs/day02.txt", "r") do |f|
+policies = File.open("./day02.txt", "r") do |f|
   f.each_line.map do |line|
     PasswordPolicy.new(line)
   end

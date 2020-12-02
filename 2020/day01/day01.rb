@@ -1,5 +1,5 @@
 @mapping = {}
-File.open("./inputs/day01.txt", "r") do |f|
+File.open("./day01.txt", "r") do |f|
   f.each_line do |line|
     @mapping[line.to_i] = true
   end
