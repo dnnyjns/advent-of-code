@@ -10,7 +10,7 @@ class CustomCustoms
       @answers      = Hash.new(0)
 
       @declarations.each do |row|
-        row.split("").each do |answer|
+        row.each_char do |answer|
           @answers[answer] += 1
         end
       end
