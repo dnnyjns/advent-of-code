@@ -2,7 +2,7 @@
 # https://adventofcode.com/2020/day/6
 
 class CustomCustoms
-  class Declarations
+  class DeclartionGroup
     attr_reader :declarations, :answers
 
     def initialize(declarations)
@@ -30,20 +30,20 @@ class CustomCustoms
     end
   end
 
-  attr_reader :declarations
+  attr_reader :groups
   def initialize
-    lines = ::File.read("./day06.txt")
-    @declarations = lines.split(/^\n/).map do |group|
-      Declarations.new(group.split("\n"))
+    lines   = ::File.read("./day06.txt")
+    @groups = lines.split(/^\n/).map do |group|
+      DeclartionGroup.new(group.split("\n"))
     end
   end
 
   def part1
-    declarations.sum(&:part1)
+    groups.sum(&:part1)
   end
 
   def part2
-    declarations.sum(&:part2)
+    groups.sum(&:part2)
   end
 end
 
