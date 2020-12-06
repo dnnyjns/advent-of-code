@@ -27,7 +27,7 @@ func main() {
 	}
 
 	for _, pair := range pairs {
-		part2 = part2 * countTrees(grid, pair[0], pair[1])
+		part2 *= countTrees(grid, pair[0], pair[1])
 	}
 
 	fmt.Println("--- Day 3: Toboggan Trajectory ---")
