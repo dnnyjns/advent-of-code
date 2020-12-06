@@ -17,30 +17,28 @@ class BinaryBoarding
       (find_row * 8) + find_column
     end
 
-    def bsearch(value, lower:, upper:)
-      boundary = 0..((2**value.length) - 1)
+    def bsearch(value, lower_key:, upper_key:)
+      lower = 0
+      upper = 2 ** value.length - 1
+
       value.split("").each do |key|
-        if key == lower
-          lower_bound = boundary.min
-          upper_bound = (boundary.max - lower_bound) / 2
-          upper_bound += lower_bound
-          boundary = lower_bound..upper_bound
-        elsif key == upper
-          upper_bound = boundary.max
-          lower_bound = boundary.min
-          lower_bound += ((upper_bound - lower_bound) / 2.0).ceil
-          boundary = lower_bound..upper_bound
+        if key == lower_key
+          upper = (upper - lower) / 2
+          upper += lower
+        elsif key == upper_key
+          lower += ((upper - lower) / 2.0).ceil
         end
       end
-      boundary.min
+
+      lower
     end
 
     def find_row
-      bsearch(data[0..6], lower: "F", upper: "B")
+      bsearch(data[0..6], lower_key: "F", upper_key: "B")
     end
 
     def find_column
-      bsearch(data[7..-1], lower: "L", upper: "R")
+      bsearch(data[7..-1], lower_key: "L", upper_key: "R")
     end
   end
 
