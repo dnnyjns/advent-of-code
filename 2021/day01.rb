@@ -3,7 +3,7 @@
 
 class SonarSweep
   def initialize
-    @lines = ::File.read("./input.txt").split.map(&:to_i)
+    @lines = ::File.read("./inputs/input01.txt").split.map(&:to_i)
   end
 
   def part1

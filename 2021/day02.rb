@@ -3,7 +3,7 @@
 
 class Dive
   def initialize
-    @lines = ::File.read("./input.txt").split("\n")
+    @lines = ::File.read("./inputs/input02.txt").split("\n")
   end
 
   def part1
