@@ -1,4 +1,4 @@
-# --- Day 1: Tuning Trouble ---
+# --- Day 6: Tuning Trouble ---
 # https://adventofcode.com/2022/day/6
 
 class TuningTrouble
