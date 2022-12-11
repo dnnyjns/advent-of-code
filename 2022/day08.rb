@@ -1,6 +1,6 @@
 # --- Day 8: Treetop Tree House ---
 # https://adventofcode.com/2022/day/8
-require 'debug'
+
 class TreetopTreeHouse
   def self.part1
     input = ::File.read("./inputs/input08.txt").split("\n").map { |x| x.split("").map(&:to_i) }
