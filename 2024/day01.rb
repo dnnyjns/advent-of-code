@@ -8,7 +8,6 @@ puts "Part 1: #{part1}"
 
 
 #### Part 2
-right_list_occurences = Hash.new(0)
-right.each { |r| right_list_occurences[r] += 1 }
-part2 = left.sum { |l| l * right_list_occurences[l] }
+right_list_occurrences = right.tally
+part2 = left.sum { |l| l * right_list_occurrences[l].to_i }
 puts "Part 2: #{part2}"
